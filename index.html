@@ -2,8 +2,8 @@
 <html lang="bn">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>তোমাকে ভালোবাসি মারজিয়া • I Love You Marjia</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>তোমাকে ভালোবাসি মারজিয়া ❤️</title>
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Great+Vibes&family=Sacramento&display=swap" rel="stylesheet">
     <style>
         * {
@@ -21,31 +21,17 @@
             overflow: hidden;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             position: relative;
+            padding: 20px;
+            touch-action: manipulation;
         }
         
-        /* Romantic background stars */
-        .stars {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-        }
-        
-        .star {
-            position: absolute;
-            background-color: #fff;
-            border-radius: 50%;
-            animation: twinkle var(--duration, 4s) infinite var(--delay, 0s);
-        }
-        
-        /* Flower container */
+        /* Mobile-optimized container */
         .container {
             position: relative;
-            width: 380px;
-            height: 380px;
-            perspective: 1000px;
+            width: 290px;
+            height: 290px;
+            max-width: 95vw;
+            max-height: 95vw;
         }
         
         .flower {
@@ -55,25 +41,22 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            transform-style: preserve-3d;
-            transition: transform 0.2s ease;
         }
         
-        /* Petals with enhanced glow */
+        /* Optimized petals for mobile */
         .petals {
             position: absolute;
             width: 100%;
             height: 100%;
             animation: rotate 22s linear infinite;
-            transform-style: preserve-3d;
         }
         
         .petal {
             position: absolute;
             top: 50%;
             left: 50%;
-            width: 32px;
-            height: 135px;
+            width: 24px;
+            height: 105px;
             background: linear-gradient(145deg, 
                 #e6004d 0%, 
                 #ff1a66 30%, 
@@ -83,42 +66,35 @@
             border-radius: 50% 50% 0 0;
             transform-origin: bottom center;
             box-shadow: 
-                0 0 25px 10px rgba(230, 0, 77, 0.95),
-                0 0 45px 15px rgba(255, 40, 120, 0.9),
-                0 0 75px 25px rgba(255, 130, 180, 0.85);
+                0 0 20px 8px rgba(230, 0, 77, 0.9),
+                0 0 35px 12px rgba(255, 40, 120, 0.85),
+                0 0 60px 20px rgba(255, 130, 180, 0.8);
             animation: glowPulse 3.2s ease-in-out infinite alternate;
-            transform-style: preserve-3d;
-            backface-visibility: hidden;
         }
         
-        /* 12 petals for maximum beauty */
-        .petal:nth-child(1) { transform: rotate(0deg) translate(0, -68px) rotateX(20deg); animation-delay: 0s; }
-        .petal:nth-child(2) { transform: rotate(30deg) translate(0, -68px) rotateX(25deg); animation-delay: 0.25s; }
-        .petal:nth-child(3) { transform: rotate(60deg) translate(0, -68px) rotateX(30deg); animation-delay: 0.5s; }
-        .petal:nth-child(4) { transform: rotate(90deg) translate(0, -68px) rotateX(35deg); animation-delay: 0.75s; }
-        .petal:nth-child(5) { transform: rotate(120deg) translate(0, -68px) rotateX(40deg); animation-delay: 1s; }
-        .petal:nth-child(6) { transform: rotate(150deg) translate(0, -68px) rotateX(35deg); animation-delay: 1.25s; }
-        .petal:nth-child(7) { transform: rotate(180deg) translate(0, -68px) rotateX(30deg); animation-delay: 1.5s; }
-        .petal:nth-child(8) { transform: rotate(210deg) translate(0, -68px) rotateX(25deg); animation-delay: 1.75s; }
-        .petal:nth-child(9) { transform: rotate(240deg) translate(0, -68px) rotateX(20deg); animation-delay: 2s; }
-        .petal:nth-child(10) { transform: rotate(270deg) translate(0, -68px) rotateX(15deg); animation-delay: 2.25s; }
-        .petal:nth-child(11) { transform: rotate(300deg) translate(0, -68px) rotateX(10deg); animation-delay: 2.5s; }
-        .petal:nth-child(12) { transform: rotate(330deg) translate(0, -68px) rotateX(5deg); animation-delay: 2.75s; }
+        /* 10 petals optimized for mobile clarity */
+        .petal:nth-child(1) { transform: rotate(0deg) translate(0, -52px); animation-delay: 0s; }
+        .petal:nth-child(2) { transform: rotate(36deg) translate(0, -52px); animation-delay: 0.3s; }
+        .petal:nth-child(3) { transform: rotate(72deg) translate(0, -52px); animation-delay: 0.6s; }
+        .petal:nth-child(4) { transform: rotate(108deg) translate(0, -52px); animation-delay: 0.9s; }
+        .petal:nth-child(5) { transform: rotate(144deg) translate(0, -52px); animation-delay: 1.2s; }
+        .petal:nth-child(6) { transform: rotate(180deg) translate(0, -52px); animation-delay: 1.5s; }
+        .petal:nth-child(7) { transform: rotate(216deg) translate(0, -52px); animation-delay: 1.8s; }
+        .petal:nth-child(8) { transform: rotate(252deg) translate(0, -52px); animation-delay: 2.1s; }
+        .petal:nth-child(9) { transform: rotate(288deg) translate(0, -52px); animation-delay: 2.4s; }
+        .petal:nth-child(10) { transform: rotate(324deg) translate(0, -52px); animation-delay: 2.7s; }
         
-        /* The HEART - main attraction with PERFECT TEXT READABILITY */
+        /* PERFECT HEART FOR MOBILE - Crystal clear text */
         .heart-container {
             position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            width: 130px;
-            height: 120px;
+            width: 105px;
+            height: 95px;
             z-index: 100;
-            animation: heartbeat 1.3s ease-in-out infinite;
-            filter: drop-shadow(0 0 15px rgba(230, 0, 77, 0.95));
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            animation: heartbeat 1.4s ease-in-out infinite;
+            filter: drop-shadow(0 0 12px rgba(230, 0, 77, 0.95));
         }
         
         .heart {
@@ -134,14 +110,14 @@
             position: absolute;
             content: "";
             top: 0;
-            width: 58px;
-            height: 88px;
+            width: 48px;
+            height: 72px;
             background: linear-gradient(45deg, #e6004d, #ff1a4d, #ff4060);
             border-radius: 50%;
             box-shadow: 
-                0 0 30px 12px rgba(230, 0, 77, 0.95),
-                0 0 50px 20px rgba(255, 40, 100, 0.9),
-                0 0 80px 30px rgba(255, 100, 150, 0.85);
+                0 0 25px 10px rgba(230, 0, 77, 0.95),
+                0 0 40px 16px rgba(255, 40, 100, 0.9),
+                0 0 65px 25px rgba(255, 100, 150, 0.85);
         }
         
         .heart::before {
@@ -156,7 +132,6 @@
             transform-origin: 0 100%;
         }
         
-        /* Shine effect on heart */
         .heart-shine {
             position: absolute;
             top: 22%;
@@ -166,12 +141,12 @@
             background: rgba(255, 255, 255, 0.4);
             border-radius: 50%;
             transform: rotate(45deg);
-            filter: blur(4px);
+            filter: blur(3px);
             z-index: 5;
             animation: shinePulse 2s ease-in-out infinite;
         }
         
-        /* PERFECT TEXT - Crystal Clear Readability */
+        /* PERFECT TEXT FOR MOBILE - Maximum readability */
         .love-text {
             position: absolute;
             top: 50%;
@@ -181,71 +156,72 @@
             z-index: 20;
             width: 95%;
             font-family: 'Sacramento', cursive;
+            pointer-events: none;
         }
         
         .love-text div {
             display: block;
             font-weight: 700;
-            letter-spacing: 1.8px;
-            line-height: 1.15;
+            letter-spacing: 1.5px;
+            line-height: 1.1;
             text-shadow: 
-                0 0 8px rgba(0, 0, 0, 0.8),
-                0 2px 4px rgba(0, 0, 0, 0.9);
+                0 0 6px rgba(0, 0, 0, 0.85),
+                0 2px 3px rgba(0, 0, 0, 0.9);
         }
         
-        /* I LOVE YOU - Pure White with definition */
+        /* I LOVE YOU - Pure white, bold, clear */
         .love-text div:first-child {
-            font-size: 26px;
-            color: #ffffff; /* Pure white for maximum contrast */
-            margin-bottom: -3px;
+            font-size: 21px;
+            color: #ffffff;
+            margin-bottom: -2px;
             font-family: 'Sacramento', cursive;
-            font-weight: 600;
-            letter-spacing: 2px;
+            font-weight: 700;
+            letter-spacing: 1.8px;
             text-shadow: 
-                0 0 10px rgba(0, 0, 0, 0.85),
-                0 0 20px rgba(255, 255, 255, 0.9),
-                0 0 30px rgba(255, 255, 255, 0.8);
+                0 0 8px rgba(0, 0, 0, 0.85),
+                0 0 15px rgba(255, 255, 255, 0.95),
+                0 0 22px rgba(255, 255, 255, 0.9);
             animation: textGlowWhite 2.5s ease-in-out infinite alternate;
         }
         
-        /* MARJIA - Vibrant Gold that pops */
+        /* MARJIA - Vibrant gold that pops on any screen */
         .love-text div:nth-child(2) {
-            font-size: 38px;
-            color: #ffd700; /* Pure gold - no gradient, maximum readability */
+            font-size: 31px;
+            color: #ffd700;
             font-family: 'Great Vibes', cursive;
-            margin-top: -5px;
+            margin-top: -3px;
             font-weight: 700;
-            letter-spacing: 2.5px;
+            letter-spacing: 2.2px;
             text-shadow: 
-                0 0 10px rgba(0, 0, 0, 0.85),
-                0 0 20px rgba(255, 215, 0, 0.95),
-                0 0 35px rgba(255, 215, 0, 0.9),
-                0 0 50px rgba(255, 215, 0, 0.85);
+                0 0 8px rgba(0, 0, 0, 0.85),
+                0 0 16px rgba(255, 215, 0, 0.98),
+                0 0 28px rgba(255, 215, 0, 0.95),
+                0 0 40px rgba(255, 215, 0, 0.9);
             animation: textGlowGold 2.5s ease-in-out infinite alternate;
             animation-delay: 0.3s;
         }
         
-        /* Leaves with enhanced animation */
+        /* Leaves optimized for mobile */
         .leaves {
             position: absolute;
-            bottom: -40px;
+            bottom: -28px;
             left: 50%;
             transform: translateX(-50%);
             display: flex;
-            gap: 25px;
+            gap: 18px;
             z-index: 5;
         }
         
         .leaf {
-            width: 60px;
-            height: 100px;
+            width: 45px;
+            height: 75px;
             background: linear-gradient(135deg, #00a835 0%, #00c853 40%, #64dd17 100%);
             border-radius: 50% 50% 50% 0;
-            transform: rotate(-35deg) skewY(10deg);
+            transform: rotate(-32deg) skewY(10deg);
             box-shadow: 
-                0 8px 25px rgba(0, 80, 30, 0.6),
-                0 0 40px 10px rgba(0, 200, 80, 0.5);
-            animation: leafSway 4.2s ease-in-out infinite alternate;
+                0 6px 20px rgba(0, 80, 30, 0.6),
+                0 0 30px 8px rgba(0, 200, 80, 0.5);
+            animation: leafSway 4s ease-in-out infinite alternate;
             position: relative;
             overflow: hidden;
         }
@@ -263,49 +239,52 @@
         
         .leaf:nth-child(2) {
             border-radius: 50% 50% 0 50%;
-            transform: rotate(35deg) skewY(-10deg);
-            animation-delay: -2.1s;
+            transform: rotate(32deg) skewY(-10deg);
+            animation-delay: -2s;
         }
         
-        /* Title with romantic styling */
+        /* Title optimized for mobile */
         .title {
             position: absolute;
-            top: -95px;
+            top: -55px;
             width: 100%;
             text-align: center;
             color: #ffffff;
-            font-size: 36px;
-            letter-spacing: 3px;
+            font-size: 26px;
+            letter-spacing: 2px;
             text-shadow: 
-                0 0 15px rgba(255, 255, 255, 0.9),
-                0 0 30px rgba(255, 105, 180, 0.85);
+                0 0 10px rgba(255, 255, 255, 0.9),
+                0 0 20px rgba(255, 105, 180, 0.8);
             font-family: 'Dancing Script', cursive;
             font-weight: 700;
-            animation: fadeIn 2s ease-out forwards;
+            animation: fadeIn 1.8s ease-out forwards;
             opacity: 0;
-            animation-delay: 0.5s;
-            -webkit-text-stroke: 1px rgba(255, 255, 255, 0.3);
+            animation-delay: 0.3s;
+            -webkit-text-stroke: 0.5px rgba(255, 255, 255, 0.3);
+            line-height: 1.2;
+            padding: 0 10px;
         }
         
         .subtitle {
             position: absolute;
-            bottom: -95px;
+            bottom: -55px;
             width: 100%;
             text-align: center;
             color: #ffd700;
-            font-size: 20px;
-            letter-spacing: 2px;
-            font-style: italic;
+            font-size: 17px;
+            letter-spacing: 1.5px;
             font-family: 'Dancing Script', cursive;
             text-shadow: 
-                0 0 10px rgba(0, 0, 0, 0.7),
-                0 0 20px rgba(255, 215, 0, 0.9);
-            animation: fadeIn 2.5s ease-out 1s forwards;
+                0 0 8px rgba(0, 0, 0, 0.7),
+                0 0 15px rgba(255, 215, 0, 0.9);
+            animation: fadeIn 2.2s ease-out 0.8s forwards;
             opacity: 0;
             font-weight: 600;
+            line-height: 1.3;
+            padding: 0 15px;
         }
         
-        /* Floating magical particles */
+        /* Floating particles optimized for mobile performance */
         .particle-container {
             position: absolute;
             top: 0;
@@ -313,16 +292,15 @@
             width: 100%;
             height: 100%;
             pointer-events: none;
-            z-index: 50;
+            z-index: 10;
         }
         
         .particle {
             position: absolute;
-            background: radial-gradient(circle, #ff99ac 0%, transparent 70%);
             border-radius: 50%;
             animation: float 15s linear infinite;
-            opacity: 0.85;
-            z-index: 40;
+            opacity: 0.8;
+            z-index: 5;
         }
         
         .particle.gold {
@@ -331,32 +309,55 @@
         }
         
         .particle.pink {
-            background: radial-gradient(circle, #ff1a4d 0%, transparent 70%);
+            background: radial-gradient(circle, #ff99ac 0%, transparent 70%);
             animation-duration: 18s;
         }
         
-        /* Romantic message */
+        .particle.white {
+            background: radial-gradient(circle, #ffffff 0%, transparent 70%);
+            animation-duration: 15s;
+        }
+        
+        /* Romantic message for mobile */
         .message {
             position: absolute;
-            bottom: -135px;
+            bottom: -85px;
             width: 100%;
             text-align: center;
             color: #ffd700;
             font-family: 'Dancing Script', cursive;
-            font-size: 24px;
+            font-size: 20px;
             font-weight: 700;
-            letter-spacing: 2.5px;
+            letter-spacing: 2px;
             text-shadow: 
-                0 0 10px rgba(0, 0, 0, 0.8),
-                0 0 20px rgba(255, 215, 0, 0.95),
-                0 0 35px rgba(255, 215, 0, 0.9);
-            animation: fadeIn 3s ease-out 1.5s forwards, pulse 3s ease-in-out infinite 2s;
+                0 0 8px rgba(0, 0, 0, 0.8),
+                0 0 15px rgba(255, 215, 0, 0.95),
+                0 0 25px rgba(255, 215, 0, 0.9);
+            animation: fadeIn 2.5s ease-out 1.2s forwards, pulse 3s ease-in-out infinite 1.8s;
             opacity: 0;
             z-index: 100;
             -webkit-text-stroke: 0.5px rgba(100, 0, 50, 0.7);
+            line-height: 1.2;
+            padding: 0 10px;
         }
         
-        /* Animations */
+        /* Touch instruction */
+        .touch-instruction {
+            position: absolute;
+            bottom: -115px;
+            width: 100%;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 14px;
+            font-family: 'Segoe UI', sans-serif;
+            animation: fadeIn 3s ease-out 2s forwards;
+            opacity: 0;
+            z-index: 100;
+            padding: 0 20px;
+            line-height: 1.4;
+        }
+        
+        /* Animations optimized for mobile */
         @keyframes rotate {
             0% { transform: rotate(0deg); }
             100% { transform: rotate(360deg); }
@@ -365,24 +366,24 @@
         @keyframes glowPulse {
             0% { 
                 box-shadow: 
-                    0 0 25px 10px rgba(230, 0, 77, 0.95),
-                    0 0 45px 15px rgba(255, 40, 120, 0.9),
-                    0 0 75px 25px rgba(255, 130, 180, 0.85);
+                    0 0 20px 8px rgba(230, 0, 77, 0.9),
+                    0 0 35px 12px rgba(255, 40, 120, 0.85),
+                    0 0 60px 20px rgba(255, 130, 180, 0.8);
             }
             100% { 
                 box-shadow: 
-                    0 0 35px 15px rgba(230, 0, 77, 1),
-                    0 0 60px 25px rgba(255, 40, 120, 0.98),
-                    0 0 95px 40px rgba(255, 130, 180, 0.95);
+                    0 0 28px 12px rgba(230, 0, 77, 0.98),
+                    0 0 48px 20px rgba(255, 40, 120, 0.95),
+                    0 0 80px 32px rgba(255, 130, 180, 0.92);
             }
         }
         
         @keyframes heartbeat {
-            0% { transform: translate(-50%, -50%) scale(0.97); }
-            14% { transform: translate(-50%, -50%) scale(1.15); }
-            28% { transform: translate(-50%, -50%) scale(0.97); }
-            42% { transform: translate(-50%, -50%) scale(1.18); }
-            70% { transform: translate(-50%, -50%) scale(0.97); }
+            0% { transform: translate(-50%, -50%) scale(0.96); }
+            14% { transform: translate(-50%, -50%) scale(1.16); }
+            28% { transform: translate(-50%, -50%) scale(0.96); }
+            42% { transform: translate(-50%, -50%) scale(1.2); }
+            70% { transform: translate(-50%, -50%) scale(0.96); }
         }
         
         @keyframes subtleRotate {
@@ -392,57 +393,57 @@
         
         @keyframes shinePulse {
             0%, 100% { opacity: 0.4; transform: rotate(45deg) scale(0.8); }
-            50% { opacity: 0.7; transform: rotate(45deg) scale(1.3); }
+            50% { opacity: 0.7; transform: rotate(45deg) scale(1.2); }
         }
         
         @keyframes textGlowWhite {
             0%, 100% { 
                 text-shadow: 
-                    0 0 10px rgba(0, 0, 0, 0.85),
-                    0 0 20px rgba(255, 255, 255, 0.9),
-                    0 0 30px rgba(255, 255, 255, 0.8);
+                    0 0 8px rgba(0, 0, 0, 0.85),
+                    0 0 15px rgba(255, 255, 255, 0.95),
+                    0 0 22px rgba(255, 255, 255, 0.9);
             }
             50% { 
                 text-shadow: 
-                    0 0 12px rgba(0, 0, 0, 0.9),
-                    0 0 25px rgba(255, 255, 255, 1),
-                    0 0 40px rgba(255, 255, 255, 0.95),
-                    0 0 55px rgba(255, 255, 255, 0.9);
+                    0 0 10px rgba(0, 0, 0, 0.9),
+                    0 0 20px rgba(255, 255, 255, 1),
+                    0 0 30px rgba(255, 255, 255, 0.98),
+                    0 0 40px rgba(255, 255, 255, 0.95);
             }
         }
         
         @keyframes textGlowGold {
             0%, 100% { 
                 text-shadow: 
-                    0 0 10px rgba(0, 0, 0, 0.85),
-                    0 0 20px rgba(255, 215, 0, 0.95),
-                    0 0 35px rgba(255, 215, 0, 0.9);
+                    0 0 8px rgba(0, 0, 0, 0.85),
+                    0 0 16px rgba(255, 215, 0, 0.98),
+                    0 0 28px rgba(255, 215, 0, 0.95);
             }
             50% { 
                 text-shadow: 
-                    0 0 12px rgba(0, 0, 0, 0.9),
-                    0 0 25px rgba(255, 215, 0, 1),
-                    0 0 45px rgba(255, 215, 0, 0.98),
-                    0 0 65px rgba(255, 215, 0, 0.95),
-                    0 0 85px rgba(255, 150, 180, 0.9);
+                    0 0 10px rgba(0, 0, 0, 0.9),
+                    0 0 22px rgba(255, 215, 0, 1),
+                    0 0 38px rgba(255, 215, 0, 0.99),
+                    0 0 55px rgba(255, 215, 0, 0.97),
+                    0 0 70px rgba(255, 150, 180, 0.95);
             }
         }
         
         @keyframes leafSway {
-            0% { transform: rotate(-35deg) skewY(10deg) translateY(0); }
-            100% { transform: rotate(-31deg) skewY(12deg) translateY(-10px); }
+            0% { transform: rotate(-32deg) skewY(10deg) translateY(0); }
+            100% { transform: rotate(-28deg) skewY(12deg) translateY(-8px); }
         }
         
         @keyframes float {
             0% {
                 transform: translateY(0) translateX(0) scale(0.3);
-                opacity: 0.85;
+                opacity: 0.8;
             }
             50% {
-                opacity: 0.45;
+                opacity: 0.4;
             }
             100% {
-                transform: translateY(-100vh) translateX(80px) scale(1.3);
+                transform: translateY(-100vh) translateX(60px) scale(1.1);
                 opacity: 0;
             }
         }
@@ -452,78 +453,34 @@
         }
         
         @keyframes pulse {
-            0% { transform: scale(0.97); }
-            50% { transform: scale(1.06); }
-            100% { transform: scale(0.97); }
+            0% { transform: scale(0.96); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(0.96); }
         }
         
-        @keyframes twinkle {
-            0%, 100% { opacity: 0.2; transform: scale(0.8); }
-            50% { opacity: 1; transform: scale(1); }
+        /* Performance optimization for mobile */
+        .petal, .heart, .leaf {
+            will-change: transform, box-shadow;
+            backface-visibility: hidden;
+            transform: translateZ(0);
         }
         
-        /* Responsive design */
-        @media (max-width: 480px) {
-            .container {
-                width: 300px;
-                height: 300px;
-            }
-            
-            .petal {
-                width: 26px;
-                height: 110px;
-            }
-            
-            .heart-container {
-                width: 105px;
-                height: 95px;
-            }
-            
-            .love-text div:first-child {
-                font-size: 20px;
-            }
-            
-            .love-text div:nth-child(2) {
-                font-size: 29px;
-            }
-            
-            .title {
-                font-size: 28px;
-                top: -80px;
-            }
-            
-            .subtitle {
-                font-size: 17px;
-                bottom: -80px;
-            }
-            
-            .message {
-                font-size: 20px;
-                bottom: -120px;
-            }
-            
-            .leaves {
-                bottom: -30px;
-                gap: 20px;
-            }
-            
-            .leaf {
-                width: 48px;
-                height: 80px;
-            }
+        /* Hide scrollbars for mobile */
+        ::-webkit-scrollbar {
+            display: none;
+        }
+        
+        /* Prevent pull-to-refresh on mobile */
+        body {
+            overscroll-behavior-y: none;
         }
     </style>
 </head>
 <body>
-    <!-- Romantic starry background -->
-    <div class="stars" id="stars"></div>
-    
     <div class="container">
         <div class="title">তোমাকে ভালোবাসি মারজিয়া</div>
         <div class="flower">
             <div class="petals">
-                <div class="petal"></div>
-                <div class="petal"></div>
                 <div class="petal"></div>
                 <div class="petal"></div>
                 <div class="petal"></div>
@@ -541,7 +498,7 @@
                     <div class="heart-shine"></div>
                     <div class="love-text">
                         <div>I Love You</div>
-                        <div>Marjia</div>
+                        <div>Marjia💕</div>
                     </div>
                 </div>
             </div>
@@ -554,74 +511,46 @@
         
         <div class="subtitle">তুমি আমার হৃদয়ের রানী • Queen of My Heart</div>
         <div class="message">❤️ চিরকাল তোমার ❤️</div>
+       
     </div>
     
     <div class="particle-container" id="particles"></div>
 
     <script>
-        // Create romantic stars background
-        function createStars() {
-            const starsContainer = document.getElementById('stars');
-            const starCount = 180;
-            
-            for (let i = 0; i < starCount; i++) {
-                const star = document.createElement('div');
-                star.classList.add('star');
-                
-                // Random size between 1px and 4px
-                const size = Math.random() * 3 + 1;
-                star.style.width = `${size}px`;
-                star.style.height = `${size}px`;
-                
-                // Random position
-                star.style.top = `${Math.random() * 100}%`;
-                star.style.left = `${Math.random() * 100}%`;
-                
-                // Random twinkle duration and delay
-                star.style.setProperty('--duration', `${Math.random() * 3 + 2}s`);
-                star.style.setProperty('--delay', `${Math.random() * 5}s`);
-                
-                // Slightly different colors for some stars
-                if (Math.random() > 0.85) {
-                    star.style.backgroundColor = '#ffd700';
-                } else if (Math.random() > 0.92) {
-                    star.style.backgroundColor = '#ff99ac';
-                }
-                
-                starsContainer.appendChild(star);
-            }
-        }
-        
-        // Create magical floating particles
+        // Create optimized particles for mobile
         function createParticles() {
             const container = document.getElementById('particles');
-            const particleCount = 50;
+            // Reduced count for mobile performance
+            const particleCount = 25;
             
             for (let i = 0; i < particleCount; i++) {
                 const particle = document.createElement('div');
                 particle.classList.add('particle');
                 
                 // Randomly assign colors
-                if (Math.random() > 0.7) {
+                const rand = Math.random();
+                if (rand > 0.7) {
                     particle.classList.add('gold');
-                } else if (Math.random() > 0.4) {
+                } else if (rand > 0.4) {
                     particle.classList.add('pink');
+                } else {
+                    particle.classList.add('white');
                 }
                 
-                // Random size between 4px and 16px
-                const size = Math.random() * 12 + 4;
+                // Smaller sizes for mobile
+                const size = Math.random() * 8 + 3;
                 particle.style.width = `${size}px`;
                 particle.style.height = `${size}px`;
                 
-                // Random position around the flower
-                const posX = Math.random() * 450 - 225;
-                const posY = Math.random() * 450 + 220;
+                // Position around the flower
+                const posX = Math.random() * 300 - 150;
+                const posY = Math.random() * 300 + 150;
                 particle.style.left = `calc(50% + ${posX}px)`;
                 particle.style.top = `calc(50% + ${posY}px)`;
                 
-                // Random animation properties
-                const duration = Math.random() * 22 + 16;
-                const delay = Math.random() * 12;
+                // Optimized animation
+                const duration = Math.random() * 15 + 10;
+                const delay = Math.random() * 5;
                 particle.style.animationDuration = `${duration}s`;
                 particle.style.animationDelay = `${delay}s`;
                 
@@ -629,47 +558,41 @@
             }
         }
         
-        // Add subtle interactive tilt effect
+        // Touch interaction for mobile
         document.addEventListener('DOMContentLoaded', () => {
-            createStars();
             createParticles();
             
             const container = document.querySelector('.container');
-            const flower = document.querySelector('.flower');
+            const heart = document.querySelector('.heart-container');
             
-            // Tilt effect on mouse move
-            container.addEventListener('mousemove', (e) => {
-                const xAxis = (window.innerWidth / 2 - e.pageX) / 30;
-                const yAxis = (window.innerHeight / 2 - e.pageY) / 30;
-                flower.style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg)`;
-            });
-            
-            // Reset on mouse leave
-            container.addEventListener('mouseleave', () => {
-                flower.style.transform = 'rotateY(0deg) rotateX(0deg)';
-            });
-            
-            // Add extra magic on click
+            // Enhanced touch interaction
+            let touchCount = 0;
             container.addEventListener('click', (e) => {
-                // Create burst of particles at click position
-                const burstCount = 30;
+                touchCount++;
+                
+                // Create burst of particles at touch position
+                const burstCount = 15; // Reduced for mobile
                 const rect = container.getBoundingClientRect();
                 const x = e.clientX - rect.left;
                 const y = e.clientY - rect.top;
                 
+                // Create burst particles
                 for (let i = 0; i < burstCount; i++) {
                     const burst = document.createElement('div');
                     burst.classList.add('particle');
-                    if (Math.random() > 0.6) burst.classList.add('gold');
-                    if (Math.random() > 0.85) burst.classList.add('pink');
                     
-                    const size = Math.random() * 10 + 4;
+                    // Alternate colors
+                    if (i % 3 === 0) burst.classList.add('gold');
+                    else if (i % 3 === 1) burst.classList.add('pink');
+                    else burst.classList.add('white');
+                    
+                    const size = Math.random() * 6 + 3;
                     burst.style.width = `${size}px`;
                     burst.style.height = `${size}px`;
                     burst.style.left = `${x}px`;
                     burst.style.top = `${y}px`;
                     burst.style.position = 'absolute';
-                    burst.style.zIndex = '1000';
+                    burst.style.zIndex = '200';
                     burst.style.pointerEvents = 'none';
                     burst.style.borderRadius = '50%';
                     
@@ -677,8 +600,8 @@
                     
                     // Animate burst
                     const angle = Math.random() * Math.PI * 2;
-                    const distance = Math.random() * 180 + 60;
-                    const duration = Math.random() * 1.2 + 0.6;
+                    const distance = Math.random() * 100 + 40;
+                    const duration = Math.random() * 0.8 + 0.4;
                     
                     burst.animate([
                         { 
@@ -686,7 +609,7 @@
                             opacity: 1
                         },
                         { 
-                            transform: `translate(${Math.cos(angle) * distance}px, ${Math.sin(angle) * distance}px) scale(0.2)`,
+                            transform: `translate(${Math.cos(angle) * distance}px, ${Math.sin(angle) * distance}px) scale(0.1)`,
                             opacity: 0
                         }
                     ], {
@@ -701,12 +624,82 @@
                     }, duration * 1000 + 100);
                 }
                 
-                // Heart pulse effect on click
-                const heart = document.querySelector('.heart-container');
-                heart.style.animation = 'none';
-                setTimeout(() => {
-                    heart.style.animation = 'heartbeat 1.3s ease-in-out infinite';
-                }, 10);
+                // Special heart effects on multiple touches
+                if (touchCount % 3 === 0) {
+                    // Extra big pulse
+                    heart.style.animation = 'none';
+                    setTimeout(() => {
+                        heart.style.animation = 'heartbeat 0.8s ease-in-out 3';
+                    }, 10);
+                } else {
+                    // Normal pulse
+                    heart.style.animation = 'none';
+                    setTimeout(() => {
+                        heart.style.animation = 'heartbeat 1.4s ease-in-out infinite';
+                    }, 10);
+                }
+                
+                // Show special message on 5th touch
+                if (touchCount === 5) {
+                    const specialMsg = document.createElement('div');
+                    specialMsg.innerHTML = '❤️ তুমি আমার সবচেয়ে প্রিয় ❤️';
+                    specialMsg.style.position = 'absolute';
+                    specialMsg.style.top = '15%';
+                    specialMsg.style.width = '100%';
+                    specialMsg.style.textAlign = 'center';
+                    specialMsg.style.color = '#ffd700';
+                    specialMsg.style.fontFamily = "'Dancing Script', cursive";
+                    specialMsg.style.fontSize = '22px';
+                    specialMsg.style.fontWeight = '700';
+                    specialMsg.style.textShadow = '0 0 10px rgba(0,0,0,0.8), 0 0 20px rgba(255,215,0,0.95)';
+                    specialMsg.style.zIndex = '300';
+                    specialMsg.style.opacity = '0';
+                    specialMsg.style.animation = 'fadeIn 1s forwards, pulse 2s ease-in-out 1s infinite';
+                    document.body.appendChild(specialMsg);
+                    
+                    // Remove after 5 seconds
+                    setTimeout(() => {
+                        specialMsg.style.animation = 'fadeIn 0.5s reverse forwards';
+                        setTimeout(() => {
+                            specialMsg.remove();
+                        }, 500);
+                    }, 5000);
+                }
+            });
+            
+            // Add subtle tilt on touch move (optional)
+            let isTouching = false;
+            let lastX = 0;
+            let lastY = 0;
+            
+            container.addEventListener('touchstart', (e) => {
+                isTouching = true;
+                lastX = e.touches[0].clientX;
+                lastY = e.touches[0].clientY;
+            });
+            
+            container.addEventListener('touchmove', (e) => {
+                if (!isTouching) return;
+                
+                const currentX = e.touches[0].clientX;
+                const currentY = e.touches[0].clientY;
+                
+                const diffX = currentX - lastX;
+                const diffY = currentY - lastY;
+                
+                // Subtle tilt effect
+                const tiltX = diffY * 0.1;
+                const tiltY = diffX * 0.1;
+                
+                container.style.transform = `rotateX(${tiltX}deg) rotateY(${tiltY}deg)`;
+                
+                lastX = currentX;
+                lastY = currentY;
+            });
+            
+            container.addEventListener('touchend', () => {
+                isTouching = false;
+                container.style.transform = 'rotateX(0) rotateY(0)';
             });
         });
     </script>
